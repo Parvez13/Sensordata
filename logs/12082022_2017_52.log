@@ -1,0 +1,366 @@
+[2022-12-08 20:17:52,629 ] 14 root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Data Ingestion <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[2022-12-08 20:17:52,630 ] 21 root - INFO - Exporting collection data as pandas dataframe
+[2022-12-08 20:17:52,630 ] 18 root - INFO - Reading data from database: aps and collection: sensor
+[2022-12-08 20:17:56,469 ] 20 root - INFO - Found columns: Index(['_id', 'class', 'aa_000', 'ab_000', 'ac_000', 'ad_000', 'ae_000',
+       'af_000', 'ag_000', 'ag_001',
+       ...
+       'ee_002', 'ee_003', 'ee_004', 'ee_005', 'ee_006', 'ee_007', 'ee_008',
+       'ee_009', 'ef_000', 'eg_000'],
+      dtype='object', length=172)
+[2022-12-08 20:17:56,470 ] 22 root - INFO - Row and columns in df: (36188, 172)
+[2022-12-08 20:17:56,672 ] 24 root - INFO - Row and columns in df: (36188, 171)
+[2022-12-08 20:17:56,673 ] 27 root - INFO - Save data in feature store
+[2022-12-08 20:17:57,388 ] 32 root - INFO - Create feature store folder if not available
+[2022-12-08 20:17:57,389 ] 35 root - INFO - Save df to feature store folder
+[2022-12-08 20:18:00,044 ] 40 root - INFO - split dataset into train and test set
+[2022-12-08 20:18:00,741 ] 44 root - INFO - create dataset directory folder if not available
+[2022-12-08 20:18:00,742 ] 49 root - INFO - Save df to feature store folder
+[2022-12-08 20:18:03,061 ] 61 root - INFO - Data ingestion artifact: DataIngestionArtifact(feature_store_file_path='/config/workspace/artifact/12082022__201752/data_ingestion/feature_store/sensor.csv', train_file_path='/config/workspace/artifact/12082022__201752/data_ingestion/dataset/train.csv', test_file_path='/config/workspace/artifact/12082022__201752/data_ingestion/dataset/test.csv')
+[2022-12-08 20:18:03,582 ] 22 root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Data Validation <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[2022-12-08 20:18:03,582 ] 111 root - INFO - Reading base dataframe
+[2022-12-08 20:18:06,521 ] 114 root - INFO - Replace na value in base df
+[2022-12-08 20:18:06,521 ] 116 root - INFO - Drop null values colums from base df
+[2022-12-08 20:18:07,428 ] 45 root - INFO - selecting column name which contains null above to 0.7
+[2022-12-08 20:18:07,428 ] 48 root - INFO - Columns to drop: ['ab_000', 'bn_000', 'bo_000', 'bp_000', 'bq_000', 'br_000', 'cr_000']
+[2022-12-08 20:18:07,518 ] 119 root - INFO - Reading train dataframe
+[2022-12-08 20:18:07,924 ] 121 root - INFO - Reading test dataframe
+[2022-12-08 20:18:08,035 ] 124 root - INFO - Drop null values colums from train df
+[2022-12-08 20:18:08,049 ] 45 root - INFO - selecting column name which contains null above to 0.7
+[2022-12-08 20:18:08,049 ] 48 root - INFO - Columns to drop: ['ab_000', 'bn_000', 'bo_000', 'bp_000', 'bq_000', 'br_000', 'cr_000']
+[2022-12-08 20:18:08,060 ] 126 root - INFO - Drop null values colums from test df
+[2022-12-08 20:18:08,068 ] 45 root - INFO - selecting column name which contains null above to 0.7
+[2022-12-08 20:18:08,068 ] 48 root - INFO - Columns to drop: ['ab_000', 'bn_000', 'bo_000', 'bp_000', 'bq_000', 'br_000', 'cr_000']
+[2022-12-08 20:18:15,693 ] 135 root - INFO - Is all required columns present in train df
+[2022-12-08 20:18:15,693 ] 137 root - INFO - Is all required columns present in test df
+[2022-12-08 20:18:15,694 ] 141 root - INFO - As all column are available in train df hence detecting data drift
+[2022-12-08 20:18:15,694 ] 89 root - INFO - Hypothesis class: object, object 
+[2022-12-08 20:18:15,828 ] 89 root - INFO - Hypothesis aa_000: float64, float64 
+[2022-12-08 20:18:15,839 ] 89 root - INFO - Hypothesis ac_000: float64, float64 
+[2022-12-08 20:18:15,847 ] 89 root - INFO - Hypothesis ad_000: float64, float64 
+[2022-12-08 20:18:15,886 ] 89 root - INFO - Hypothesis ae_000: float64, float64 
+[2022-12-08 20:18:15,922 ] 89 root - INFO - Hypothesis af_000: float64, float64 
+[2022-12-08 20:18:15,959 ] 89 root - INFO - Hypothesis ag_000: float64, float64 
+[2022-12-08 20:18:15,993 ] 89 root - INFO - Hypothesis ag_001: float64, float64 
+[2022-12-08 20:18:16,030 ] 89 root - INFO - Hypothesis ag_002: float64, float64 
+[2022-12-08 20:18:16,067 ] 89 root - INFO - Hypothesis ag_003: float64, float64 
+[2022-12-08 20:18:16,073 ] 89 root - INFO - Hypothesis ag_004: float64, float64 
+[2022-12-08 20:18:16,088 ] 89 root - INFO - Hypothesis ag_005: float64, float64 
+[2022-12-08 20:18:16,129 ] 89 root - INFO - Hypothesis ag_006: float64, float64 
+[2022-12-08 20:18:16,140 ] 89 root - INFO - Hypothesis ag_007: float64, float64 
+[2022-12-08 20:18:16,181 ] 89 root - INFO - Hypothesis ag_008: float64, float64 
+[2022-12-08 20:18:16,190 ] 89 root - INFO - Hypothesis ag_009: float64, float64 
+[2022-12-08 20:18:16,229 ] 89 root - INFO - Hypothesis ah_000: float64, float64 
+[2022-12-08 20:18:16,240 ] 89 root - INFO - Hypothesis ai_000: float64, float64 
+[2022-12-08 20:18:16,277 ] 89 root - INFO - Hypothesis aj_000: float64, float64 
+[2022-12-08 20:18:16,315 ] 89 root - INFO - Hypothesis ak_000: float64, float64 
+[2022-12-08 20:18:16,351 ] 89 root - INFO - Hypothesis al_000: float64, float64 
+[2022-12-08 20:18:16,358 ] 89 root - INFO - Hypothesis am_0: float64, float64 
+[2022-12-08 20:18:16,366 ] 89 root - INFO - Hypothesis an_000: float64, float64 
+[2022-12-08 20:18:16,378 ] 89 root - INFO - Hypothesis ao_000: float64, float64 
+[2022-12-08 20:18:16,390 ] 89 root - INFO - Hypothesis ap_000: float64, float64 
+[2022-12-08 20:18:16,401 ] 89 root - INFO - Hypothesis aq_000: float64, float64 
+[2022-12-08 20:18:16,412 ] 89 root - INFO - Hypothesis ar_000: float64, float64 
+[2022-12-08 20:18:16,447 ] 89 root - INFO - Hypothesis as_000: float64, float64 
+[2022-12-08 20:18:16,451 ] 89 root - INFO - Hypothesis at_000: float64, float64 
+[2022-12-08 20:18:16,488 ] 89 root - INFO - Hypothesis au_000: float64, float64 
+[2022-12-08 20:18:16,523 ] 89 root - INFO - Hypothesis av_000: float64, float64 
+[2022-12-08 20:18:16,531 ] 89 root - INFO - Hypothesis ax_000: float64, float64 
+[2022-12-08 20:18:16,572 ] 89 root - INFO - Hypothesis ay_000: float64, float64 
+[2022-12-08 20:18:16,607 ] 89 root - INFO - Hypothesis ay_001: float64, float64 
+[2022-12-08 20:18:16,643 ] 89 root - INFO - Hypothesis ay_002: float64, float64 
+[2022-12-08 20:18:16,678 ] 89 root - INFO - Hypothesis ay_003: float64, float64 
+[2022-12-08 20:18:16,715 ] 89 root - INFO - Hypothesis ay_004: float64, float64 
+[2022-12-08 20:18:16,750 ] 89 root - INFO - Hypothesis ay_005: float64, float64 
+[2022-12-08 20:18:16,791 ] 89 root - INFO - Hypothesis ay_006: float64, float64 
+[2022-12-08 20:18:16,832 ] 89 root - INFO - Hypothesis ay_007: float64, float64 
+[2022-12-08 20:18:16,842 ] 89 root - INFO - Hypothesis ay_008: float64, float64 
+[2022-12-08 20:18:16,883 ] 89 root - INFO - Hypothesis ay_009: float64, float64 
+[2022-12-08 20:18:16,919 ] 89 root - INFO - Hypothesis az_000: float64, float64 
+[2022-12-08 20:18:16,929 ] 89 root - INFO - Hypothesis az_001: float64, float64 
+[2022-12-08 20:18:16,938 ] 89 root - INFO - Hypothesis az_002: float64, float64 
+[2022-12-08 20:18:16,979 ] 89 root - INFO - Hypothesis az_003: float64, float64 
+[2022-12-08 20:18:16,990 ] 89 root - INFO - Hypothesis az_004: float64, float64 
+[2022-12-08 20:18:17,033 ] 89 root - INFO - Hypothesis az_005: float64, float64 
+[2022-12-08 20:18:17,046 ] 89 root - INFO - Hypothesis az_006: float64, float64 
+[2022-12-08 20:18:17,056 ] 89 root - INFO - Hypothesis az_007: float64, float64 
+[2022-12-08 20:18:17,094 ] 89 root - INFO - Hypothesis az_008: float64, float64 
+[2022-12-08 20:18:17,134 ] 89 root - INFO - Hypothesis az_009: float64, float64 
+[2022-12-08 20:18:17,174 ] 89 root - INFO - Hypothesis ba_000: float64, float64 
+[2022-12-08 20:18:17,217 ] 89 root - INFO - Hypothesis ba_001: float64, float64 
+[2022-12-08 20:18:17,227 ] 89 root - INFO - Hypothesis ba_002: float64, float64 
+[2022-12-08 20:18:17,238 ] 89 root - INFO - Hypothesis ba_003: float64, float64 
+[2022-12-08 20:18:17,248 ] 89 root - INFO - Hypothesis ba_004: float64, float64 
+[2022-12-08 20:18:17,258 ] 89 root - INFO - Hypothesis ba_005: float64, float64 
+[2022-12-08 20:18:17,268 ] 89 root - INFO - Hypothesis ba_006: float64, float64 
+[2022-12-08 20:18:17,312 ] 89 root - INFO - Hypothesis ba_007: float64, float64 
+[2022-12-08 20:18:17,321 ] 89 root - INFO - Hypothesis ba_008: float64, float64 
+[2022-12-08 20:18:17,329 ] 89 root - INFO - Hypothesis ba_009: float64, float64 
+[2022-12-08 20:18:17,369 ] 89 root - INFO - Hypothesis bb_000: float64, float64 
+[2022-12-08 20:18:17,379 ] 89 root - INFO - Hypothesis bc_000: float64, float64 
+[2022-12-08 20:18:17,387 ] 89 root - INFO - Hypothesis bd_000: float64, float64 
+[2022-12-08 20:18:17,427 ] 89 root - INFO - Hypothesis be_000: float64, float64 
+[2022-12-08 20:18:17,435 ] 89 root - INFO - Hypothesis bf_000: float64, float64 
+[2022-12-08 20:18:17,473 ] 89 root - INFO - Hypothesis bg_000: float64, float64 
+[2022-12-08 20:18:17,558 ] 89 root - INFO - Hypothesis bh_000: float64, float64 
+[2022-12-08 20:18:17,569 ] 89 root - INFO - Hypothesis bi_000: float64, float64 
+[2022-12-08 20:18:17,579 ] 89 root - INFO - Hypothesis bj_000: float64, float64 
+[2022-12-08 20:18:17,623 ] 89 root - INFO - Hypothesis bk_000: float64, float64 
+[2022-12-08 20:18:17,666 ] 89 root - INFO - Hypothesis bl_000: float64, float64 
+[2022-12-08 20:18:17,706 ] 89 root - INFO - Hypothesis bm_000: float64, float64 
+[2022-12-08 20:18:17,712 ] 89 root - INFO - Hypothesis bs_000: float64, float64 
+[2022-12-08 20:18:17,722 ] 89 root - INFO - Hypothesis bt_000: float64, float64 
+[2022-12-08 20:18:17,733 ] 89 root - INFO - Hypothesis bu_000: float64, float64 
+[2022-12-08 20:18:17,743 ] 89 root - INFO - Hypothesis bv_000: float64, float64 
+[2022-12-08 20:18:17,754 ] 89 root - INFO - Hypothesis bx_000: float64, float64 
+[2022-12-08 20:18:17,795 ] 89 root - INFO - Hypothesis by_000: float64, float64 
+[2022-12-08 20:18:17,837 ] 89 root - INFO - Hypothesis bz_000: float64, float64 
+[2022-12-08 20:18:17,877 ] 89 root - INFO - Hypothesis ca_000: float64, float64 
+[2022-12-08 20:18:17,888 ] 89 root - INFO - Hypothesis cb_000: float64, float64 
+[2022-12-08 20:18:17,899 ] 89 root - INFO - Hypothesis cc_000: float64, float64 
+[2022-12-08 20:18:17,909 ] 89 root - INFO - Hypothesis cd_000: float64, float64 
+[2022-12-08 20:18:17,945 ] 89 root - INFO - Hypothesis ce_000: float64, float64 
+[2022-12-08 20:18:17,954 ] 89 root - INFO - Hypothesis cf_000: float64, float64 
+[2022-12-08 20:18:17,991 ] 89 root - INFO - Hypothesis cg_000: float64, float64 
+[2022-12-08 20:18:18,031 ] 89 root - INFO - Hypothesis ch_000: float64, float64 
+[2022-12-08 20:18:18,071 ] 89 root - INFO - Hypothesis ci_000: float64, float64 
+[2022-12-08 20:18:18,082 ] 89 root - INFO - Hypothesis cj_000: float64, float64 
+[2022-12-08 20:18:18,123 ] 89 root - INFO - Hypothesis ck_000: float64, float64 
+[2022-12-08 20:18:18,164 ] 89 root - INFO - Hypothesis cl_000: float64, float64 
+[2022-12-08 20:18:18,202 ] 89 root - INFO - Hypothesis cm_000: float64, float64 
+[2022-12-08 20:18:18,209 ] 89 root - INFO - Hypothesis cn_000: float64, float64 
+[2022-12-08 20:18:18,244 ] 89 root - INFO - Hypothesis cn_001: float64, float64 
+[2022-12-08 20:18:18,282 ] 89 root - INFO - Hypothesis cn_002: float64, float64 
+[2022-12-08 20:18:18,291 ] 89 root - INFO - Hypothesis cn_003: float64, float64 
+[2022-12-08 20:18:18,301 ] 89 root - INFO - Hypothesis cn_004: float64, float64 
+[2022-12-08 20:18:18,312 ] 89 root - INFO - Hypothesis cn_005: float64, float64 
+[2022-12-08 20:18:18,322 ] 89 root - INFO - Hypothesis cn_006: float64, float64 
+[2022-12-08 20:18:18,363 ] 89 root - INFO - Hypothesis cn_007: float64, float64 
+[2022-12-08 20:18:18,404 ] 89 root - INFO - Hypothesis cn_008: float64, float64 
+[2022-12-08 20:18:18,444 ] 89 root - INFO - Hypothesis cn_009: float64, float64 
+[2022-12-08 20:18:18,483 ] 89 root - INFO - Hypothesis co_000: float64, float64 
+[2022-12-08 20:18:18,522 ] 89 root - INFO - Hypothesis cp_000: float64, float64 
+[2022-12-08 20:18:18,529 ] 89 root - INFO - Hypothesis cq_000: float64, float64 
+[2022-12-08 20:18:18,540 ] 89 root - INFO - Hypothesis cs_000: float64, float64 
+[2022-12-08 20:18:18,551 ] 89 root - INFO - Hypothesis cs_001: float64, float64 
+[2022-12-08 20:18:18,591 ] 89 root - INFO - Hypothesis cs_002: float64, float64 
+[2022-12-08 20:18:18,632 ] 89 root - INFO - Hypothesis cs_003: float64, float64 
+[2022-12-08 20:18:18,673 ] 89 root - INFO - Hypothesis cs_004: float64, float64 
+[2022-12-08 20:18:18,715 ] 89 root - INFO - Hypothesis cs_005: float64, float64 
+[2022-12-08 20:18:18,725 ] 89 root - INFO - Hypothesis cs_006: float64, float64 
+[2022-12-08 20:18:18,736 ] 89 root - INFO - Hypothesis cs_007: float64, float64 
+[2022-12-08 20:18:18,748 ] 89 root - INFO - Hypothesis cs_008: float64, float64 
+[2022-12-08 20:18:18,786 ] 89 root - INFO - Hypothesis cs_009: float64, float64 
+[2022-12-08 20:18:18,823 ] 89 root - INFO - Hypothesis ct_000: float64, float64 
+[2022-12-08 20:18:18,864 ] 89 root - INFO - Hypothesis cu_000: float64, float64 
+[2022-12-08 20:18:18,873 ] 89 root - INFO - Hypothesis cv_000: float64, float64 
+[2022-12-08 20:18:18,882 ] 89 root - INFO - Hypothesis cx_000: float64, float64 
+[2022-12-08 20:18:18,923 ] 89 root - INFO - Hypothesis cy_000: float64, float64 
+[2022-12-08 20:18:18,959 ] 89 root - INFO - Hypothesis cz_000: float64, float64 
+[2022-12-08 20:18:19,000 ] 89 root - INFO - Hypothesis da_000: float64, float64 
+[2022-12-08 20:18:19,038 ] 89 root - INFO - Hypothesis db_000: float64, float64 
+[2022-12-08 20:18:19,078 ] 89 root - INFO - Hypothesis dc_000: float64, float64 
+[2022-12-08 20:18:19,120 ] 89 root - INFO - Hypothesis dd_000: float64, float64 
+[2022-12-08 20:18:19,130 ] 89 root - INFO - Hypothesis de_000: float64, float64 
+[2022-12-08 20:18:19,171 ] 89 root - INFO - Hypothesis df_000: float64, float64 
+[2022-12-08 20:18:19,208 ] 89 root - INFO - Hypothesis dg_000: float64, float64 
+[2022-12-08 20:18:19,244 ] 89 root - INFO - Hypothesis dh_000: float64, float64 
+[2022-12-08 20:18:19,282 ] 89 root - INFO - Hypothesis di_000: float64, float64 
+[2022-12-08 20:18:19,319 ] 89 root - INFO - Hypothesis dj_000: float64, float64 
+[2022-12-08 20:18:19,356 ] 89 root - INFO - Hypothesis dk_000: float64, float64 
+[2022-12-08 20:18:19,392 ] 89 root - INFO - Hypothesis dl_000: float64, float64 
+[2022-12-08 20:18:19,428 ] 89 root - INFO - Hypothesis dm_000: float64, float64 
+[2022-12-08 20:18:19,466 ] 89 root - INFO - Hypothesis dn_000: float64, float64 
+[2022-12-08 20:18:19,477 ] 89 root - INFO - Hypothesis do_000: float64, float64 
+[2022-12-08 20:18:19,517 ] 89 root - INFO - Hypothesis dp_000: float64, float64 
+[2022-12-08 20:18:19,559 ] 89 root - INFO - Hypothesis dq_000: float64, float64 
+[2022-12-08 20:18:19,598 ] 89 root - INFO - Hypothesis dr_000: float64, float64 
+[2022-12-08 20:18:19,636 ] 89 root - INFO - Hypothesis ds_000: float64, float64 
+[2022-12-08 20:18:19,646 ] 89 root - INFO - Hypothesis dt_000: float64, float64 
+[2022-12-08 20:18:19,687 ] 89 root - INFO - Hypothesis du_000: float64, float64 
+[2022-12-08 20:18:19,729 ] 89 root - INFO - Hypothesis dv_000: float64, float64 
+[2022-12-08 20:18:19,771 ] 89 root - INFO - Hypothesis dx_000: float64, float64 
+[2022-12-08 20:18:19,809 ] 89 root - INFO - Hypothesis dy_000: float64, float64 
+[2022-12-08 20:18:19,850 ] 89 root - INFO - Hypothesis dz_000: float64, float64 
+[2022-12-08 20:18:19,886 ] 89 root - INFO - Hypothesis ea_000: float64, float64 
+[2022-12-08 20:18:19,922 ] 89 root - INFO - Hypothesis eb_000: float64, float64 
+[2022-12-08 20:18:19,963 ] 89 root - INFO - Hypothesis ec_00: float64, float64 
+[2022-12-08 20:18:19,973 ] 89 root - INFO - Hypothesis ed_000: float64, float64 
+[2022-12-08 20:18:19,982 ] 89 root - INFO - Hypothesis ee_000: float64, float64 
+[2022-12-08 20:18:20,025 ] 89 root - INFO - Hypothesis ee_001: float64, float64 
+[2022-12-08 20:18:20,036 ] 89 root - INFO - Hypothesis ee_002: float64, float64 
+[2022-12-08 20:18:20,046 ] 89 root - INFO - Hypothesis ee_003: float64, float64 
+[2022-12-08 20:18:20,056 ] 89 root - INFO - Hypothesis ee_004: float64, float64 
+[2022-12-08 20:18:20,102 ] 89 root - INFO - Hypothesis ee_005: float64, float64 
+[2022-12-08 20:18:20,144 ] 89 root - INFO - Hypothesis ee_006: float64, float64 
+[2022-12-08 20:18:20,185 ] 89 root - INFO - Hypothesis ee_007: float64, float64 
+[2022-12-08 20:18:20,226 ] 89 root - INFO - Hypothesis ee_008: float64, float64 
+[2022-12-08 20:18:20,267 ] 89 root - INFO - Hypothesis ee_009: float64, float64 
+[2022-12-08 20:18:20,306 ] 89 root - INFO - Hypothesis ef_000: float64, float64 
+[2022-12-08 20:18:20,342 ] 89 root - INFO - Hypothesis eg_000: float64, float64 
+[2022-12-08 20:18:20,378 ] 144 root - INFO - As all column are available in test df hence detecting data drift
+[2022-12-08 20:18:20,379 ] 89 root - INFO - Hypothesis class: object, object 
+[2022-12-08 20:18:20,455 ] 89 root - INFO - Hypothesis aa_000: float64, float64 
+[2022-12-08 20:18:20,462 ] 89 root - INFO - Hypothesis ac_000: float64, float64 
+[2022-12-08 20:18:20,468 ] 89 root - INFO - Hypothesis ad_000: float64, float64 
+[2022-12-08 20:18:20,473 ] 89 root - INFO - Hypothesis ae_000: float64, float64 
+[2022-12-08 20:18:20,476 ] 89 root - INFO - Hypothesis af_000: float64, float64 
+[2022-12-08 20:18:20,479 ] 89 root - INFO - Hypothesis ag_000: float64, float64 
+[2022-12-08 20:18:20,494 ] 89 root - INFO - Hypothesis ag_001: float64, float64 
+[2022-12-08 20:18:20,510 ] 89 root - INFO - Hypothesis ag_002: float64, float64 
+[2022-12-08 20:18:20,525 ] 89 root - INFO - Hypothesis ag_003: float64, float64 
+[2022-12-08 20:18:20,530 ] 89 root - INFO - Hypothesis ag_004: float64, float64 
+[2022-12-08 20:18:20,536 ] 89 root - INFO - Hypothesis ag_005: float64, float64 
+[2022-12-08 20:18:20,543 ] 89 root - INFO - Hypothesis ag_006: float64, float64 
+[2022-12-08 20:18:20,550 ] 89 root - INFO - Hypothesis ag_007: float64, float64 
+[2022-12-08 20:18:20,557 ] 89 root - INFO - Hypothesis ag_008: float64, float64 
+[2022-12-08 20:18:20,562 ] 89 root - INFO - Hypothesis ag_009: float64, float64 
+[2022-12-08 20:18:20,567 ] 89 root - INFO - Hypothesis ah_000: float64, float64 
+[2022-12-08 20:18:20,574 ] 89 root - INFO - Hypothesis ai_000: float64, float64 
+[2022-12-08 20:18:20,590 ] 89 root - INFO - Hypothesis aj_000: float64, float64 
+[2022-12-08 20:18:20,594 ] 89 root - INFO - Hypothesis ak_000: float64, float64 
+[2022-12-08 20:18:20,609 ] 89 root - INFO - Hypothesis al_000: float64, float64 
+[2022-12-08 20:18:20,613 ] 89 root - INFO - Hypothesis am_0: float64, float64 
+[2022-12-08 20:18:20,618 ] 89 root - INFO - Hypothesis an_000: float64, float64 
+[2022-12-08 20:18:20,625 ] 89 root - INFO - Hypothesis ao_000: float64, float64 
+[2022-12-08 20:18:20,632 ] 89 root - INFO - Hypothesis ap_000: float64, float64 
+[2022-12-08 20:18:20,640 ] 89 root - INFO - Hypothesis aq_000: float64, float64 
+[2022-12-08 20:18:20,647 ] 89 root - INFO - Hypothesis ar_000: float64, float64 
+[2022-12-08 20:18:20,662 ] 89 root - INFO - Hypothesis as_000: float64, float64 
+[2022-12-08 20:18:20,665 ] 89 root - INFO - Hypothesis at_000: float64, float64 
+[2022-12-08 20:18:20,681 ] 89 root - INFO - Hypothesis au_000: float64, float64 
+[2022-12-08 20:18:20,695 ] 89 root - INFO - Hypothesis av_000: float64, float64 
+[2022-12-08 20:18:20,701 ] 89 root - INFO - Hypothesis ax_000: float64, float64 
+[2022-12-08 20:18:20,706 ] 89 root - INFO - Hypothesis ay_000: float64, float64 
+[2022-12-08 20:18:20,721 ] 89 root - INFO - Hypothesis ay_001: float64, float64 
+[2022-12-08 20:18:20,737 ] 89 root - INFO - Hypothesis ay_002: float64, float64 
+[2022-12-08 20:18:20,751 ] 89 root - INFO - Hypothesis ay_003: float64, float64 
+[2022-12-08 20:18:20,766 ] 89 root - INFO - Hypothesis ay_004: float64, float64 
+[2022-12-08 20:18:20,781 ] 89 root - INFO - Hypothesis ay_005: float64, float64 
+[2022-12-08 20:18:20,787 ] 89 root - INFO - Hypothesis ay_006: float64, float64 
+[2022-12-08 20:18:20,793 ] 89 root - INFO - Hypothesis ay_007: float64, float64 
+[2022-12-08 20:18:20,800 ] 89 root - INFO - Hypothesis ay_008: float64, float64 
+[2022-12-08 20:18:20,807 ] 89 root - INFO - Hypothesis ay_009: float64, float64 
+[2022-12-08 20:18:20,821 ] 89 root - INFO - Hypothesis az_000: float64, float64 
+[2022-12-08 20:18:20,828 ] 89 root - INFO - Hypothesis az_001: float64, float64 
+[2022-12-08 20:18:20,834 ] 89 root - INFO - Hypothesis az_002: float64, float64 
+[2022-12-08 20:18:20,841 ] 89 root - INFO - Hypothesis az_003: float64, float64 
+[2022-12-08 20:18:20,848 ] 89 root - INFO - Hypothesis az_004: float64, float64 
+[2022-12-08 20:18:20,855 ] 89 root - INFO - Hypothesis az_005: float64, float64 
+[2022-12-08 20:18:20,862 ] 89 root - INFO - Hypothesis az_006: float64, float64 
+[2022-12-08 20:18:20,868 ] 89 root - INFO - Hypothesis az_007: float64, float64 
+[2022-12-08 20:18:20,873 ] 89 root - INFO - Hypothesis az_008: float64, float64 
+[2022-12-08 20:18:20,876 ] 89 root - INFO - Hypothesis az_009: float64, float64 
+[2022-12-08 20:18:20,891 ] 89 root - INFO - Hypothesis ba_000: float64, float64 
+[2022-12-08 20:18:20,898 ] 89 root - INFO - Hypothesis ba_001: float64, float64 
+[2022-12-08 20:18:20,905 ] 89 root - INFO - Hypothesis ba_002: float64, float64 
+[2022-12-08 20:18:20,912 ] 89 root - INFO - Hypothesis ba_003: float64, float64 
+[2022-12-08 20:18:20,919 ] 89 root - INFO - Hypothesis ba_004: float64, float64 
+[2022-12-08 20:18:20,926 ] 89 root - INFO - Hypothesis ba_005: float64, float64 
+[2022-12-08 20:18:20,933 ] 89 root - INFO - Hypothesis ba_006: float64, float64 
+[2022-12-08 20:18:20,940 ] 89 root - INFO - Hypothesis ba_007: float64, float64 
+[2022-12-08 20:18:20,946 ] 89 root - INFO - Hypothesis ba_008: float64, float64 
+[2022-12-08 20:18:20,952 ] 89 root - INFO - Hypothesis ba_009: float64, float64 
+[2022-12-08 20:18:20,957 ] 89 root - INFO - Hypothesis bb_000: float64, float64 
+[2022-12-08 20:18:20,964 ] 89 root - INFO - Hypothesis bc_000: float64, float64 
+[2022-12-08 20:18:20,969 ] 89 root - INFO - Hypothesis bd_000: float64, float64 
+[2022-12-08 20:18:20,976 ] 89 root - INFO - Hypothesis be_000: float64, float64 
+[2022-12-08 20:18:20,983 ] 89 root - INFO - Hypothesis bf_000: float64, float64 
+[2022-12-08 20:18:20,987 ] 89 root - INFO - Hypothesis bg_000: float64, float64 
+[2022-12-08 20:18:20,995 ] 89 root - INFO - Hypothesis bh_000: float64, float64 
+[2022-12-08 20:18:21,002 ] 89 root - INFO - Hypothesis bi_000: float64, float64 
+[2022-12-08 20:18:21,010 ] 89 root - INFO - Hypothesis bj_000: float64, float64 
+[2022-12-08 20:18:21,017 ] 89 root - INFO - Hypothesis bk_000: float64, float64 
+[2022-12-08 20:18:21,023 ] 89 root - INFO - Hypothesis bl_000: float64, float64 
+[2022-12-08 20:18:21,029 ] 89 root - INFO - Hypothesis bm_000: float64, float64 
+[2022-12-08 20:18:21,033 ] 89 root - INFO - Hypothesis bs_000: float64, float64 
+[2022-12-08 20:18:21,040 ] 89 root - INFO - Hypothesis bt_000: float64, float64 
+[2022-12-08 20:18:21,048 ] 89 root - INFO - Hypothesis bu_000: float64, float64 
+[2022-12-08 20:18:21,057 ] 89 root - INFO - Hypothesis bv_000: float64, float64 
+[2022-12-08 20:18:21,064 ] 89 root - INFO - Hypothesis bx_000: float64, float64 
+[2022-12-08 20:18:21,072 ] 89 root - INFO - Hypothesis by_000: float64, float64 
+[2022-12-08 20:18:21,080 ] 89 root - INFO - Hypothesis bz_000: float64, float64 
+[2022-12-08 20:18:21,086 ] 89 root - INFO - Hypothesis ca_000: float64, float64 
+[2022-12-08 20:18:21,093 ] 89 root - INFO - Hypothesis cb_000: float64, float64 
+[2022-12-08 20:18:21,100 ] 89 root - INFO - Hypothesis cc_000: float64, float64 
+[2022-12-08 20:18:21,107 ] 89 root - INFO - Hypothesis cd_000: float64, float64 
+[2022-12-08 20:18:21,122 ] 89 root - INFO - Hypothesis ce_000: float64, float64 
+[2022-12-08 20:18:21,128 ] 89 root - INFO - Hypothesis cf_000: float64, float64 
+[2022-12-08 20:18:21,144 ] 89 root - INFO - Hypothesis cg_000: float64, float64 
+[2022-12-08 20:18:21,149 ] 89 root - INFO - Hypothesis ch_000: float64, float64 
+[2022-12-08 20:18:21,165 ] 89 root - INFO - Hypothesis ci_000: float64, float64 
+[2022-12-08 20:18:21,172 ] 89 root - INFO - Hypothesis cj_000: float64, float64 
+[2022-12-08 20:18:21,176 ] 89 root - INFO - Hypothesis ck_000: float64, float64 
+[2022-12-08 20:18:21,183 ] 89 root - INFO - Hypothesis cl_000: float64, float64 
+[2022-12-08 20:18:21,187 ] 89 root - INFO - Hypothesis cm_000: float64, float64 
+[2022-12-08 20:18:21,191 ] 89 root - INFO - Hypothesis cn_000: float64, float64 
+[2022-12-08 20:18:21,207 ] 89 root - INFO - Hypothesis cn_001: float64, float64 
+[2022-12-08 20:18:21,210 ] 89 root - INFO - Hypothesis cn_002: float64, float64 
+[2022-12-08 20:18:21,216 ] 89 root - INFO - Hypothesis cn_003: float64, float64 
+[2022-12-08 20:18:21,223 ] 89 root - INFO - Hypothesis cn_004: float64, float64 
+[2022-12-08 20:18:21,230 ] 89 root - INFO - Hypothesis cn_005: float64, float64 
+[2022-12-08 20:18:21,237 ] 89 root - INFO - Hypothesis cn_006: float64, float64 
+[2022-12-08 20:18:21,243 ] 89 root - INFO - Hypothesis cn_007: float64, float64 
+[2022-12-08 20:18:21,250 ] 89 root - INFO - Hypothesis cn_008: float64, float64 
+[2022-12-08 20:18:21,256 ] 89 root - INFO - Hypothesis cn_009: float64, float64 
+[2022-12-08 20:18:21,261 ] 89 root - INFO - Hypothesis co_000: float64, float64 
+[2022-12-08 20:18:21,265 ] 89 root - INFO - Hypothesis cp_000: float64, float64 
+[2022-12-08 20:18:21,270 ] 89 root - INFO - Hypothesis cq_000: float64, float64 
+[2022-12-08 20:18:21,277 ] 89 root - INFO - Hypothesis cs_000: float64, float64 
+[2022-12-08 20:18:21,284 ] 89 root - INFO - Hypothesis cs_001: float64, float64 
+[2022-12-08 20:18:21,290 ] 89 root - INFO - Hypothesis cs_002: float64, float64 
+[2022-12-08 20:18:21,297 ] 89 root - INFO - Hypothesis cs_003: float64, float64 
+[2022-12-08 20:18:21,304 ] 89 root - INFO - Hypothesis cs_004: float64, float64 
+[2022-12-08 20:18:21,311 ] 89 root - INFO - Hypothesis cs_005: float64, float64 
+[2022-12-08 20:18:21,317 ] 89 root - INFO - Hypothesis cs_006: float64, float64 
+[2022-12-08 20:18:21,325 ] 89 root - INFO - Hypothesis cs_007: float64, float64 
+[2022-12-08 20:18:21,331 ] 89 root - INFO - Hypothesis cs_008: float64, float64 
+[2022-12-08 20:18:21,336 ] 89 root - INFO - Hypothesis cs_009: float64, float64 
+[2022-12-08 20:18:21,351 ] 89 root - INFO - Hypothesis ct_000: float64, float64 
+[2022-12-08 20:18:21,357 ] 89 root - INFO - Hypothesis cu_000: float64, float64 
+[2022-12-08 20:18:21,362 ] 89 root - INFO - Hypothesis cv_000: float64, float64 
+[2022-12-08 20:18:21,368 ] 89 root - INFO - Hypothesis cx_000: float64, float64 
+[2022-12-08 20:18:21,374 ] 89 root - INFO - Hypothesis cy_000: float64, float64 
+[2022-12-08 20:18:21,378 ] 89 root - INFO - Hypothesis cz_000: float64, float64 
+[2022-12-08 20:18:21,383 ] 89 root - INFO - Hypothesis da_000: float64, float64 
+[2022-12-08 20:18:21,399 ] 89 root - INFO - Hypothesis db_000: float64, float64 
+[2022-12-08 20:18:21,403 ] 89 root - INFO - Hypothesis dc_000: float64, float64 
+[2022-12-08 20:18:21,409 ] 89 root - INFO - Hypothesis dd_000: float64, float64 
+[2022-12-08 20:18:21,415 ] 89 root - INFO - Hypothesis de_000: float64, float64 
+[2022-12-08 20:18:21,421 ] 89 root - INFO - Hypothesis df_000: float64, float64 
+[2022-12-08 20:18:21,436 ] 89 root - INFO - Hypothesis dg_000: float64, float64 
+[2022-12-08 20:18:21,452 ] 89 root - INFO - Hypothesis dh_000: float64, float64 
+[2022-12-08 20:18:21,455 ] 89 root - INFO - Hypothesis di_000: float64, float64 
+[2022-12-08 20:18:21,459 ] 89 root - INFO - Hypothesis dj_000: float64, float64 
+[2022-12-08 20:18:21,474 ] 89 root - INFO - Hypothesis dk_000: float64, float64 
+[2022-12-08 20:18:21,489 ] 89 root - INFO - Hypothesis dl_000: float64, float64 
+[2022-12-08 20:18:21,505 ] 89 root - INFO - Hypothesis dm_000: float64, float64 
+[2022-12-08 20:18:21,519 ] 89 root - INFO - Hypothesis dn_000: float64, float64 
+[2022-12-08 20:18:21,526 ] 89 root - INFO - Hypothesis do_000: float64, float64 
+[2022-12-08 20:18:21,532 ] 89 root - INFO - Hypothesis dp_000: float64, float64 
+[2022-12-08 20:18:21,538 ] 89 root - INFO - Hypothesis dq_000: float64, float64 
+[2022-12-08 20:18:21,543 ] 89 root - INFO - Hypothesis dr_000: float64, float64 
+[2022-12-08 20:18:21,547 ] 89 root - INFO - Hypothesis ds_000: float64, float64 
+[2022-12-08 20:18:21,554 ] 89 root - INFO - Hypothesis dt_000: float64, float64 
+[2022-12-08 20:18:21,561 ] 89 root - INFO - Hypothesis du_000: float64, float64 
+[2022-12-08 20:18:21,567 ] 89 root - INFO - Hypothesis dv_000: float64, float64 
+[2022-12-08 20:18:21,574 ] 89 root - INFO - Hypothesis dx_000: float64, float64 
+[2022-12-08 20:18:21,579 ] 89 root - INFO - Hypothesis dy_000: float64, float64 
+[2022-12-08 20:18:21,583 ] 89 root - INFO - Hypothesis dz_000: float64, float64 
+[2022-12-08 20:18:21,599 ] 89 root - INFO - Hypothesis ea_000: float64, float64 
+[2022-12-08 20:18:21,614 ] 89 root - INFO - Hypothesis eb_000: float64, float64 
+[2022-12-08 20:18:21,620 ] 89 root - INFO - Hypothesis ec_00: float64, float64 
+[2022-12-08 20:18:21,626 ] 89 root - INFO - Hypothesis ed_000: float64, float64 
+[2022-12-08 20:18:21,632 ] 89 root - INFO - Hypothesis ee_000: float64, float64 
+[2022-12-08 20:18:21,639 ] 89 root - INFO - Hypothesis ee_001: float64, float64 
+[2022-12-08 20:18:21,646 ] 89 root - INFO - Hypothesis ee_002: float64, float64 
+[2022-12-08 20:18:21,653 ] 89 root - INFO - Hypothesis ee_003: float64, float64 
+[2022-12-08 20:18:21,660 ] 89 root - INFO - Hypothesis ee_004: float64, float64 
+[2022-12-08 20:18:21,667 ] 89 root - INFO - Hypothesis ee_005: float64, float64 
+[2022-12-08 20:18:21,674 ] 89 root - INFO - Hypothesis ee_006: float64, float64 
+[2022-12-08 20:18:21,681 ] 89 root - INFO - Hypothesis ee_007: float64, float64 
+[2022-12-08 20:18:21,687 ] 89 root - INFO - Hypothesis ee_008: float64, float64 
+[2022-12-08 20:18:21,705 ] 89 root - INFO - Hypothesis ee_009: float64, float64 
+[2022-12-08 20:18:21,710 ] 89 root - INFO - Hypothesis ef_000: float64, float64 
+[2022-12-08 20:18:21,727 ] 89 root - INFO - Hypothesis eg_000: float64, float64 
+[2022-12-08 20:18:21,741 ] 148 root - INFO - Write reprt in yaml file
+[2022-12-08 20:18:21,816 ] 153 root - INFO - Data validation artifact: DataValidationArtifact(report_file_path='/config/workspace/artifact/12082022__201752/data_validation/report.yaml')
