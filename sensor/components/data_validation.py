@@ -9,12 +9,8 @@ from sensor import utils
 import numpy as np
 from sensor.config import TARGET_COLUMN
 
-
-
-
 class DataValidation:
-
-
+    
     def __init__(self,
                     data_validation_config:config_entity.DataValidationConfig,
                     data_ingestion_artifact:artifact_entity.DataIngestionArtifact):
